@@ -1,5 +1,5 @@
-<script>
-  import Todos from './Todos.svelte';
-</script>
-
 <Todos />
+
+<script>
+  import Todos from './components/Todos.svelte';
+</script>

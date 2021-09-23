@@ -1,6 +1,21 @@
+<div class="todo-item">
+  <div class="todo-item-left" transition:fly={{ y: 20, duration: 300 }}>
+    <FormField>
+      <Checkbox bind:checked={completed} on:change={toggleComplete} />
+      <span slot="label" class="todo-item-label" class:completed>
+        {title}
+      </span>
+    </FormField>
+  </div>
+  <IconButton class="material-icons" style="margin-bottom: 0" on:click={deleteTodo}>close</IconButton>
+</div>
+
 <script>
   import { createEventDispatcher } from 'svelte';
   import { fly } from 'svelte/transition';
+  import IconButton from '@smui/icon-button';
+  import FormField from '@smui/form-field';
+  import Checkbox from '@smui/checkbox';
 
   export let id;
   export let title;
@@ -21,18 +36,6 @@
   }
 </script>
 
-<div class="todo-item">
-  <div class="todo-item-left" transition:fly={{ y: 20, duration: 300 }}>
-    <input
-      type="checkbox"
-      bind:checked={completed}
-      on:change={toggleComplete}
-    />
-    <div class="todo-item-label" class:completed>{title}</div>
-  </div>
-  <div class="remove-item" on:click={deleteTodo}>x</div>
-</div>
-
 <style>
   .todo-item {
     margin-bottom: 15px;
@@ -40,15 +43,6 @@
     align-items: center;
     justify-content: space-between;
     animation-duration: 0.3s;
-  }
-
-  .remove-item {
-    cursor: pointer;
-    margin-left: 15px;
-  }
-
-  .remove-item:hover {
-    color: lightseagreen;
   }
 
   .todo-item-left {
