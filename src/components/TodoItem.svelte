@@ -1,15 +1,3 @@
-<div class="todo-item">
-  <div class="todo-item-left" transition:fly={{ y: 20, duration: 300 }}>
-    <FormField>
-      <Checkbox bind:checked={completed} on:change={toggleComplete} />
-      <span slot="label" class="todo-item-label" class:completed>
-        {title}
-      </span>
-    </FormField>
-  </div>
-  <IconButton class="material-icons" style="margin-bottom: 0" on:click={deleteTodo}>close</IconButton>
-</div>
-
 <script>
   import { createEventDispatcher } from 'svelte';
   import { fly } from 'svelte/transition';
@@ -35,6 +23,22 @@
     });
   }
 </script>
+
+<div class="todo-item">
+  <div class="todo-item-left" transition:fly={{ y: 20, duration: 300 }}>
+    <FormField>
+      <Checkbox bind:checked={completed} on:change={toggleComplete} />
+      <span slot="label" class="todo-item-label" class:completed>
+        {title}
+      </span>
+    </FormField>
+  </div>
+  <IconButton
+    class="material-icons"
+    style="margin-bottom: 0"
+    on:click={deleteTodo}>close</IconButton
+  >
+</div>
 
 <style>
   .todo-item {

@@ -136,31 +136,27 @@
             <Button
               on:click={() => updateFilter('all')}
               color="primary"
-              variant={currentFilter === 'all' ? 'raised' : 'outlined'}
+              variant={currentFilter === 'all' ? 'unelevated' : ''}
             >
               <Label>All</Label>
             </Button>
             <Button
               on:click={() => updateFilter('active')}
               color="primary"
-              variant={currentFilter === 'active' ? 'raised' : 'outlined'}
+              variant={currentFilter === 'active' ? 'unelevated' : ''}
             >
               <Label>Active</Label>
             </Button>
             <Button
               on:click={() => updateFilter('completed')}
               color="primary"
-              variant={currentFilter === 'completed' ? 'raised' : 'outlined'}
+              variant={currentFilter === 'completed' ? 'unelevated' : ''}
             >
               <Label>Completed</Label>
             </Button>
           </ActionButtons>
           <ActionIcons>
-            <Button
-              on:click={clearCompleted}
-              color="primary"
-              variant="outlined"
-            >
+            <Button on:click={clearCompleted}>
               <Label>Clear Completed</Label>
             </Button>
           </ActionIcons>
